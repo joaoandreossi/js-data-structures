@@ -7,7 +7,7 @@ test('When an empty stack is popped it should return undefined', () => {
     expect(stack.pop()).toBe(undefined)
 })
 
-test('The stack should follow FIFO rules', () => {
+test('The stack should follow LIFO rules', () => {
     const stack = new Stack()
     stack.push(1)
     stack.push(2)
