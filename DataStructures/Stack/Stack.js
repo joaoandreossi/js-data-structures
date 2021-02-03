@@ -18,6 +18,10 @@ Stack.prototype.pop = function(){
     return this.array.pop()
 }
 
+Stack.prototype.peek = function(){
+    return this.array.length !== 0 ? this.array[this.array.length-1] : undefined
+}
+
 Stack.prototype.print = function(){
     console.log(this.array)
 }
