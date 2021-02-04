@@ -1,5 +1,4 @@
 const SinglyLinkedList = require('./SinglyLinkedList')
-const Node = require('./Node')
 
 test('append() should insert the value in the last position', () => {
     const list = new SinglyLinkedList()
