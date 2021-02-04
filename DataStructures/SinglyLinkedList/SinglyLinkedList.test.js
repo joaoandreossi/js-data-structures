@@ -108,7 +108,9 @@ test('toArray() should return an array representation of the list', () => {
     list.append(new Node(3))
     list.append(new Node(4))
     list.append(new Node(5))
+    list.print()
     expect(list.toArray()).toMatchObject([1, 2, 3, 4, 5])
+    console.log(list.toArray())
 })
 
 test('invert() should reverse the connection between the nodes', () => {
@@ -118,9 +120,11 @@ test('invert() should reverse the connection between the nodes', () => {
     list.append(new Node(3))
     list.append(new Node(4))
     list.append(new Node(5))
+    list.print()
     expect(list.getFirst()).toBe(1)
     expect(list.getLast()).toBe(5)
     list.invert()
+    list.print()
     expect(list.getFirst()).toBe(5)
     expect(list.getLast()).toBe(1)
 })
