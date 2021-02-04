@@ -16,6 +16,9 @@ Object.defineProperty(SinglyLinkedList, 'lenght', {
     }
 })
 
+/** 
+ * Time Complexity: O(1)
+*/
 SinglyLinkedList.prototype.append = function(node) {
     if(this.head === undefined){
         this.head = node
@@ -31,6 +34,9 @@ SinglyLinkedList.prototype.append = function(node) {
     return
 }
 
+/** 
+ * Time Complexity: O(1)
+*/
 SinglyLinkedList.prototype.prepend = function(node) {
     if(this.head === undefined){
         this.head = node
@@ -46,6 +52,9 @@ SinglyLinkedList.prototype.prepend = function(node) {
     return
 }
 
+/** 
+ * Time Complexity: O(n)
+*/
 SinglyLinkedList.prototype.insert = function(index, node) {
     if(this.head === undefined){
         this.head = node
@@ -84,6 +93,9 @@ SinglyLinkedList.prototype.insert = function(index, node) {
     } while(current !== undefined)
 }
 
+/** 
+ * Time Complexity: O(1)
+*/
 SinglyLinkedList.prototype.deleteFirst = function() {
     if(this.head === undefined) return
 
@@ -95,6 +107,9 @@ SinglyLinkedList.prototype.deleteFirst = function() {
     this.lenght--
 }
 
+/** 
+ * Time Complexity: O(n)
+*/
 SinglyLinkedList.prototype.deleteLast = function() {
     if(this.head === undefined) return
     if(this.head.next === undefined) this.head = undefined
@@ -114,6 +129,9 @@ SinglyLinkedList.prototype.deleteLast = function() {
     }
 }
 
+/** 
+ * Time Complexity: O(n)
+*/
 SinglyLinkedList.prototype.delete = function(index) {
     this.verifyInput(index)
 
@@ -140,6 +158,9 @@ SinglyLinkedList.prototype.delete = function(index) {
     }
 }
 
+/** 
+ * Time Complexity: O(n)
+*/
 SinglyLinkedList.prototype.update = function(index, val){
     this.verifyInput(index)
 
@@ -160,6 +181,9 @@ SinglyLinkedList.prototype.update = function(index, val){
     }
 }
 
+/** 
+ * Time Complexity: O(n)
+*/
 SinglyLinkedList.prototype.get = function(index) {
     this.verifyInput(index)
 
@@ -184,18 +208,27 @@ SinglyLinkedList.prototype.get = function(index) {
     return undefined
 }
 
+/** 
+ * Time Complexity: O(1)
+*/
 SinglyLinkedList.prototype.getFirst = function() {
     if(this.head === undefined) return undefined
 
     return this.head.value
 }
 
+/** 
+ * Time Complexity: O(1)
+*/
 SinglyLinkedList.prototype.getLast = function() {
     if(this.head === undefined) return undefined
 
     return this.last.value
 }
 
+/** 
+ * Time Complexity: O(n)
+*/
 SinglyLinkedList.prototype.contains = function(value) {
     let current = this.head
 
@@ -207,6 +240,9 @@ SinglyLinkedList.prototype.contains = function(value) {
     return false
 }
 
+/** 
+ * Time Complexity: O(n)
+*/
 SinglyLinkedList.prototype.toArray = function(){
     if(this.head === undefined) return
 
@@ -221,6 +257,9 @@ SinglyLinkedList.prototype.toArray = function(){
     return array
 }
 
+/** 
+ * Time Complexity: O(n)
+*/
 SinglyLinkedList.prototype.invert = function(){
     if(this.head === undefined) return undefined
 
@@ -239,6 +278,9 @@ SinglyLinkedList.prototype.invert = function(){
     this.head = prev
 }
 
+/** 
+ * Time Complexity: O(n)
+*/
 SinglyLinkedList.prototype.print = function(){
     if(this.head === undefined){
         console.log('Empty list')
@@ -256,6 +298,9 @@ SinglyLinkedList.prototype.print = function(){
     console.log(msg)
 }
 
+/** 
+ * Time Complexity: O(1)
+*/
 SinglyLinkedList.prototype.verifyInput = function(index){
     if(index >= this.lenght){
         throw new Error(`Index out of bounds.\nLast Index: ${this.lenght-1} Input: ${index}`)
