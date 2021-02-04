@@ -78,16 +78,18 @@ SinglyLinkedList.prototype.insert = function(index, node) {
     }
 
     let current = this.head
+    let prev = undefined
     let newNode = node
     let i = 0
 
     do {
         if(i === index){
-            newNode.next = current.next
-            current.next = newNode
+            prev.next = newNode
+            newNode.next = current
             this.lenght++
             return
         }
+        prev = current
         current = current.next
         i++
     } while(current !== undefined)
