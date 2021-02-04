@@ -1,7 +1,8 @@
 'use strict'
 
-const Stack = function(){
+const Stack = function(size){
     this.array = []
+    this.MAX_SIZE = size
 }
 
 Object.defineProperty(Stack.prototype, 'length', {
@@ -14,6 +15,7 @@ Object.defineProperty(Stack.prototype, 'length', {
  * Time complexity: O(1)
 */
 Stack.prototype.push = function(val){
+    if(this.isFull()) throw new Error('Stack overflow.')
     return this.array.push(val)
 }
 
@@ -47,6 +49,13 @@ Stack.prototype.contains = function(val){
         if(element === val) contain = true
     })
     return contain
+}
+
+/**
+ * Time complexity: O(1)
+*/
+Stack.prototype.isFull = function(){
+    return this.length === this.MAX_SIZE ? true : false
 }
 
 module.exports = Stack
