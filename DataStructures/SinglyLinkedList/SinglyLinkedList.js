@@ -1,5 +1,7 @@
 'use strict'
 
+const Node = require('./Node')
+
 /**
  * This will be used to make a Queue structure,
  * so we need a pointer to the last element.
@@ -19,7 +21,10 @@ Object.defineProperty(SinglyLinkedList, 'lenght', {
 /** 
  * Time Complexity: O(1)
 */
-SinglyLinkedList.prototype.append = function(node) {
+SinglyLinkedList.prototype.append = function(value) {
+    
+    const node = new Node(value)
+    
     if(this.head === undefined){
         this.head = node
         this.last = node
@@ -37,7 +42,10 @@ SinglyLinkedList.prototype.append = function(node) {
 /** 
  * Time Complexity: O(1)
 */
-SinglyLinkedList.prototype.prepend = function(node) {
+SinglyLinkedList.prototype.prepend = function(value) {
+    
+    const node = new Node(value)
+
     if(this.head === undefined){
         this.head = node
         this.last = node
@@ -55,7 +63,10 @@ SinglyLinkedList.prototype.prepend = function(node) {
 /** 
  * Time Complexity: O(n)
 */
-SinglyLinkedList.prototype.insert = function(index, node) {
+SinglyLinkedList.prototype.insert = function(index, value) {
+
+    const node = new Node(value)
+
     if(this.head === undefined){
         this.head = node
         this.last = node
@@ -69,11 +80,11 @@ SinglyLinkedList.prototype.insert = function(index, node) {
         throw new Error(`Invalid index value: ${index}`)
     }
     if(index === 0){
-        this.prepend(node)
+        this.prepend(node.value)
         return
     }
     if(index === this.lenght){
-        this.append(node)
+        this.append(node.value)
         return
     }
 
@@ -244,6 +255,7 @@ SinglyLinkedList.prototype.contains = function(value) {
 
 /** 
  * Time Complexity: O(n)
+ * Space Complexity: O(n)
 */
 SinglyLinkedList.prototype.toArray = function(){
     if(this.head === undefined) return
