@@ -1,9 +1,9 @@
 'use strict'
 
 /**
- *  This will be used to make a Queue structure,
- *  so we need a pointer to the last element.
- */
+ * This will be used to make a Queue structure,
+ * so we need a pointer to the last element.
+*/
 const SinglyLinkedList = function(){
     this.head = undefined
     this.last = undefined

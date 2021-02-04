@@ -10,36 +10,36 @@ Object.defineProperty(Stack.prototype, 'length', {
     }
 })
 
-/*
-*   Time complexity: O(1)
+/**
+ * Time complexity: O(1)
 */
 Stack.prototype.push = function(val){
     return this.array.push(val)
 }
 
-/*
-*  Time complexity: O(1)
+/**
+ * Time complexity: O(1)
 */
 Stack.prototype.pop = function(){
     return this.array.pop()
 }
 
-/*
-*   Time complexity: O(1)
+/**
+ * Time complexity: O(1)
 */
 Stack.prototype.peek = function(){
     return this.array.length !== 0 ? this.array[this.array.length-1] : undefined
 }
 
-/*
-*   Time complexity: O(1)
+/**
+ * Time complexity: O(1)
 */
 Stack.prototype.print = function(){
     console.log(this.array)
 }
 
-/*
-*   Time complexity: O(n)
+/**
+ * Time complexity: O(n)
 */
 Stack.prototype.contains = function(val){
     let contain = false
