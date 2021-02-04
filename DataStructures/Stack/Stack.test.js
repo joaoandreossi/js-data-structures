@@ -1,14 +1,20 @@
 const Stack = require('./Stack')
 
 test('When an empty stack is popped it should return undefined', () => {
-    const stack = new Stack()
+    const stack = new Stack(1)
     stack.push(1)
     expect(stack.pop()).toBe(1)
     expect(stack.pop()).toBe(undefined)
 })
 
+test('Adding to a full stack should throw an error', () => {
+    const stack = new Stack(1)
+    stack.push(1)
+    expect(() => stack.push(2)).toThrow()
+})
+
 test('The stack should follow LIFO rules', () => {
-    const stack = new Stack()
+    const stack = new Stack(3)
     stack.push(1)
     stack.push(2)
     stack.push(3)
