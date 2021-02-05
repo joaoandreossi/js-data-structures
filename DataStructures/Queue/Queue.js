@@ -28,7 +28,7 @@ Queue.prototype.enqueue = function(val){
 Queue.prototype.dequeue = function(){
     if(this.isEmpty()) return undefined
 
-    const head = this.peek()
+    const head = this.front()
     this.list.deleteLast()
     return head
 }
@@ -36,8 +36,15 @@ Queue.prototype.dequeue = function(){
 /**
  *  Time Complexity: O(1)
  */
-Queue.prototype.peek = function(){
+Queue.prototype.front = function(){
     return this.list.getLast()
+}
+
+/**
+ *  Time Complexity: O(1)
+ */
+Queue.prototype.rear = function(){
+    return this.list.getFirst()
 }
 
 /**

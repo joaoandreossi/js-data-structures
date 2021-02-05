@@ -5,7 +5,8 @@ test('enqueue() should put a value at the end of the Queue', () => {
     queue.enqueue(1)
     queue.enqueue(2)
     queue.enqueue(3)
-    expect(queue.peek()).toBe(1)
+    expect(queue.front()).toBe(1)
+    expect(queue.rear()).toBe(3)
 })
 
 test('dequeue() should return and remove the first element from the Queue', () => {
@@ -15,10 +16,13 @@ test('dequeue() should return and remove the first element from the Queue', () =
     queue.enqueue(2)
     queue.enqueue(3)
     expect(queue.dequeue()).toBe(1)
-    expect(queue.peek()).toBe(2)
+    expect(queue.front()).toBe(2)
+    expect(queue.rear()).toBe(3)
     expect(queue.dequeue()).toBe(2)
     expect(queue.dequeue()).toBe(3)
     expect(queue.dequeue()).toBe(undefined)
+    expect(queue.front()).toBe(undefined)
+    expect(queue.rear()).toBe(undefined)
 })
 
 test('Adding to a full Queue should throw an error', () => {
