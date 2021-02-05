@@ -32,3 +32,11 @@ test('Adding to a full Queue should throw an error', () => {
     queue.enqueue(3)
     expect(() => queue.enqueue(4)).toThrow()
 })
+
+test('contains() should correctly indicate the presence of the passed value', () => {
+    const queue = new Queue(3)
+    queue.enqueue(1)
+    queue.enqueue(2)
+    queue.enqueue(3)
+    expect(queue.contains(2)).toBe(true)
+})

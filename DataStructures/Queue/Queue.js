@@ -48,6 +48,13 @@ Queue.prototype.rear = function(){
 }
 
 /**
+ *  Time Complexity: O(n)
+ */
+Queue.prototype.contains = function(val){
+    return this.list.contains(val)
+}
+
+/**
  *  Time Complexity: O(1)
  */
 Queue.prototype.isEmpty = function(){
