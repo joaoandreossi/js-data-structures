@@ -46,6 +46,7 @@ test('deleteLast() should remove the last element from the list', () => {
     const list = new SinglyLinkedList()
     list.append(1)
     list.deleteLast()
+    list.deleteLast()
     expect(list.getLast()).toBe(undefined)
     list.append(1)
     list.append(2)
