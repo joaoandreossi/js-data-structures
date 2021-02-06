@@ -65,7 +65,7 @@ Queue.prototype.isEmpty = function(){
  *  Time Complexity: O(1)
  */
 Queue.prototype.isFull = function(){
-    return this.list.lenght === this.MAX_SIZE ? true : false
+    return this.list.length === this.MAX_SIZE ? true : false
 }
 
 module.exports = Queue
