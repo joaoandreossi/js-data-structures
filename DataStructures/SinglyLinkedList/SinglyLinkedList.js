@@ -9,72 +9,72 @@ const Node = require('./Node')
 const SinglyLinkedList = function(){
     this.head = undefined
     this.last = undefined
-    this.lenght = 0
+    this.length = 0
 }
 
-Object.defineProperty(SinglyLinkedList, 'lenght', {
+Object.defineProperty(SinglyLinkedList, 'length', {
     get(){
-        return this.lenght
+        return this.length
     }
 })
 
 /** 
  * Time Complexity: O(1)
 */
-SinglyLinkedList.prototype.append = function(value) {
+SinglyLinkedList.prototype.append = function(value, key) {
     
-    const node = new Node(value)
+    const node = new Node(value, key)
     
     if(this.head === undefined){
         this.head = node
         this.last = node
-        this.lenght++
+        this.length++
         return
     }
 
     let current = this.last
     current.next = node
     this.last = current.next
-    this.lenght++
+    this.length++
     return
 }
 
 /** 
  * Time Complexity: O(1)
 */
-SinglyLinkedList.prototype.prepend = function(value) {
+SinglyLinkedList.prototype.prepend = function(value, key) {
     
-    const node = new Node(value)
+    const node = new Node(value, key)
 
     if(this.head === undefined){
         this.head = node
         this.last = node
-        this.lenght++
+        this.length++
         return
     }
 
     let newNode = node
     newNode.next = this.head
     this.head = newNode
-    this.lenght++
+    this.length++
     return
 }
 
 /** 
  * Time Complexity: O(n)
 */
-SinglyLinkedList.prototype.insert = function(index, value) {
+SinglyLinkedList.prototype.insert = function(index, value, key) {
 
-    const node = new Node(value)
+    const node = new Node(value, key)
 
     if(this.head === undefined){
         this.head = node
         this.last = node
-        this.lenght++
+        this.length++
         return
     }
-    if(index > this.lenght){
-        throw new Error(`Index out of bounds.\nList length: ${this.lenght} Input: ${index}`)
+    if(index > this.length){
+        throw new Error(`Index out of bounds.\nList length: ${this.length} Input: ${index}`)
     }
     if(index < 0 && typeof(index) !== 'number'){
         throw new Error(`Invalid index value: ${index}`)
@@ -83,7 +83,7 @@ SinglyLinkedList.prototype.insert = function(index, value) {
         this.prepend(node.value)
         return
     }
-    if(index === this.lenght){
+    if(index === this.length){
         this.append(node.value)
         return
     }
@@ -97,7 +97,7 @@ SinglyLinkedList.prototype.insert = function(index, value) {
         if(i === index){
             prev.next = newNode
             newNode.next = current
-            this.lenght++
+            this.length++
             return
         }
         prev = current
@@ -117,7 +117,7 @@ SinglyLinkedList.prototype.deleteFirst = function() {
         this.last = current
     }
     this.head = current
-    this.lenght--
+    this.length--
 }
 
 /** 
@@ -125,7 +125,10 @@ SinglyLinkedList.prototype.deleteFirst = function() {
 */
 SinglyLinkedList.prototype.deleteLast = function() {
     if(this.head === undefined) return
-    if(this.head.next === undefined) this.head = undefined
+    if(this.head.next === undefined){
+        this.head = undefined
+        return
+    } 
 
     let current = this.head
     let prev = current
@@ -134,7 +137,7 @@ SinglyLinkedList.prototype.deleteLast = function() {
         if(current === this.last){
             prev.next = undefined
             this.last = prev
-            this.lenght--
+            this.length--
             return
         }
         prev = current
@@ -151,7 +154,7 @@ SinglyLinkedList.prototype.delete = function(index) {
     if(index === 0){
         return this.deleteFirst()
     }
-    if(index === this.lenght - 1){
+    if(index === this.length - 1){
         return this.deleteLast()
     }
 
@@ -162,7 +165,7 @@ SinglyLinkedList.prototype.delete = function(index) {
     while(current !== undefined){
         if(i === index){
             prev.next = current.next
-            this.lenght--
+            this.length--
             return
         }
         prev = current
@@ -203,7 +206,7 @@ SinglyLinkedList.prototype.get = function(index) {
     if(index === 0){
         return this.getFirst()
     }
-    if(index === this.lenght - 1){
+    if(index === this.length - 1){
         return this.getLast()
     }
 
@@ -316,8 +319,8 @@ SinglyLinkedList.prototype.print = function(){
  * Time Complexity: O(1)
 */
 SinglyLinkedList.prototype.verifyInput = function(index){
-    if(index >= this.lenght){
-        throw new Error(`Index out of bounds.\nLast Index: ${this.lenght-1} Input: ${index}`)
+    if(index >= this.length){
+        throw new Error(`Index out of bounds.\nLast Index: ${this.length-1} Input: ${index}`)
     }
     if(index < 0 && typeof(index) !== 'number'){
         throw new Error(`Invalid index value: ${index}`)
