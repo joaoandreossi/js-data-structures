@@ -1,6 +1,6 @@
 const getHash = require('./Hash')
 
-test('The hash value should be the same for equal parameters', () => {
+test('getHash() should return the same value for equal parameters', () => {
     const hash1 = getHash('test', 100)
     const hash2 = getHash('test', 100)
     const hash3 = getHash('       test', 100)
