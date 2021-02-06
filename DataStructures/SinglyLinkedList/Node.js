@@ -1,5 +1,6 @@
-const Node = function(val){
-    this.value = val
+const Node = function(value, key){
+    this.value = value
+    this.key = key
     this.next = undefined
 }
 
