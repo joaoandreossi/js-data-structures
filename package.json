@@ -1,21 +1,19 @@
 {
-  "name": "interview-prep",
+  "name": "js-data-structures",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/joaoandreossi/interview-prep.git"
+    "url": "git+https://github.com/joaoandreossi/js-data-structures.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/joaoandreossi/interview-prep/issues"
+    "url": "https://github.com/joaoandreossi/js-data-structures/issues"
   },
-  "homepage": "https://github.com/joaoandreossi/interview-prep#readme",
+  "homepage": "https://github.com/joaoandreossi/js-data-structures#readme",
   "dependencies": {
     "jest": "^26.6.3"
   }
