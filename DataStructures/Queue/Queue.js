@@ -7,7 +7,7 @@ const Queue = function(size){
     this.MAX_SIZE = size
 }
 
-Object.defineProperty(Queue, 'length', {
+Object.defineProperty(Queue.prototype, 'length', {
     get(){
         return this.list.length
     }

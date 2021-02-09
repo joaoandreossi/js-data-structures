@@ -12,7 +12,7 @@ const SinglyLinkedList = function(){
     this.length = 0
 }
 
-Object.defineProperty(SinglyLinkedList, 'length', {
+Object.defineProperty(SinglyLinkedList.prototype, 'length', {
     get(){
         return this.length
     }
