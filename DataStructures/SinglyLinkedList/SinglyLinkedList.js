@@ -12,12 +12,6 @@ const SinglyLinkedList = function(){
     this.length = 0
 }
 
-Object.defineProperty(SinglyLinkedList.prototype, 'length', {
-    get(){
-        return this.length
-    }
-})
-
 /** 
  * Time Complexity: O(1)
 */
@@ -127,6 +121,8 @@ SinglyLinkedList.prototype.deleteLast = function() {
     if(this.head === undefined) return
     if(this.head.next === undefined){
         this.head = undefined
+        this.last = undefined
+        this.length--
         return
     } 
 
