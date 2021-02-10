@@ -730,7 +730,7 @@ console: true
 Time complexity: `O(log n)`
 
 ## License
-Distributed under MIT License. See `LICENSE.md` for more information.
+Distributed under MIT License. See `LICENSE.md` for more information. 
 
 ## Contact
 You can reach me via [LinkedIn](https://www.linkedin.com/in/joaoandreossi) or joao.andreossi@gmail.com!
