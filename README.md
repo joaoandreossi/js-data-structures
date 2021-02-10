@@ -298,3 +298,228 @@ This implementations does not have a defined maximum size, so it can be instanti
 ```
 const list = new SinglyLinkedList()
 ```
+### SinglyLinkedList.append(element)
+Insert the passed element at the end of the list.
+
+```
+list.append(1)
+list.append(2)
+list.append(3)
+```
+```
+list: 1 -> 2 -> 3 -> undefined
+```
+
+Time complexity: `O(1)`
+
+### SinglyLinkedList.prepend(element)
+Insert the passed element at the beginning of the list.
+
+```
+list.prepend(1)
+list.prepend(2)
+list.prepend(3)
+```
+```
+list: 3 -> 2 -> 1 -> undefined
+```
+
+Time complexity: `O(1)`
+
+### SinglyLinkedList.insert(index, element)
+Insert the passed element at the specified index.
+
+```
+list.prepend(1)
+list.prepend(2)
+list.prepend(3)
+
+list.insert(1, 4)
+```
+```
+list: 3 -> 4 -> 2 -> 1 -> undefined
+```
+
+Time complexity: `O(n)`
+
+### SinglyLinkedList.deleteFirst()
+Remove the first element of the list.
+
+```
+list.prepend(1)
+list.prepend(2)
+list.prepend(3)
+
+list.deleteFirst()
+```
+```
+list: 2 -> 1 -> undefined
+```
+
+Time complexity: `O(1)`
+
+### SinglyLinkedList.deleteLast()
+Remove the last element of the list.
+
+```
+list.prepend(1)
+list.prepend(2)
+list.prepend(3)
+
+list.deleteLast()
+```
+```
+list: 3 -> 2 -> undefined
+```
+
+Time complexity: `O(n)`
+
+### SinglyLinkedList.delete(index)
+Remove the element at the specified index.
+
+```
+list.prepend(1)
+list.prepend(2)
+list.prepend(3)
+
+list.delete(1)
+```
+```
+list: 3 -> 1 -> undefined
+```
+
+Time complexity: `O(n)`
+
+### SinglyLinkedList.update(index, newValue)
+Update the element at the specified index to the passed value.
+
+```
+list.prepend(1)
+list.prepend(2)
+list.prepend(3)
+
+list.update(0, 4)
+```
+```
+list: 4 -> 2 -> 1 -> undefined
+```
+
+Time complexity: `O(n)`
+
+### SinglyLinkedList.get(index)
+Returns the element at the specified index.
+
+```
+list.prepend(1)
+list.prepend(2)
+list.prepend(3)
+
+console.log(list.get(2))
+```
+```
+console: 1
+list: 3 -> 2 -> 1 -> undefined
+```
+
+Time complexity: `O(n)`
+
+### SinglyLinkedList.getFirst()
+Returns the first element of the list.
+
+```
+list.prepend(1)
+list.prepend(2)
+list.prepend(3)
+
+console.log(list.getFirst())
+```
+```
+console: 3
+list: 3 -> 2 -> 1 -> undefined
+```
+
+Time complexity: `O(1)`
+
+### SinglyLinkedList.getLast()
+Returns the last element of the list.
+
+```
+list.prepend(1)
+list.prepend(2)
+list.prepend(3)
+
+console.log(list.getLast())
+```
+```
+console: 1
+list: 3 -> 2 -> 1 -> undefined
+```
+
+Time complexity: `O(1)`
+
+### SinglyLinkedList.contains(element)
+Returns `true` if the list contains the passed element, or `false` if it doesn't.
+
+```
+list.prepend(1)
+list.prepend(2)
+list.prepend(3)
+
+console.log(list.contains(4))
+```
+```
+console: false
+list: 3 -> 2 -> 1 -> undefined
+```
+
+Time complexity: `O(n)`
+
+### SinglyLinkedList.toArray()
+Returns an array representation of the list.
+
+```
+list.prepend(1)
+list.prepend(2)
+list.prepend(3)
+
+const array = list.toArray()
+```
+```
+array: [3, 2, 1]
+list: 3 -> 2 -> 1 -> undefined
+```
+
+Time complexity: `O(n)`
+
+### SinglyLinkedList.invert()
+Invert the order of the list.
+
+```
+list.prepend(1)
+list.prepend(2)
+list.prepend(3)
+
+list.invert()
+```
+```
+list: 1 -> 2 -> 3 -> undefined
+```
+
+Time complexity: `O(n)`
+
+### SinglyLinkedList.print()
+Print the list on the console.
+
+```
+list.prepend(1)
+list.prepend(2)
+list.prepend(3)
+
+list.print()
+```
+```
+console: "3 -> 2 -> 1 -> undefined"
+list: 3 -> 2 -> 1 -> undefined
+```
+
+Time complexity: `O(n)`
