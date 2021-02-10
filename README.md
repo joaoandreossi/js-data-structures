@@ -5,9 +5,9 @@ Implementation of various data structures in (mostly) pure JavaScript.
 Having done most of my programming during college in C and Java, I thought it would be useful to see how I would go about implementing common data structures in
 vanilla JavaScript. Currently this project includes:
 
-* [Stack](#stack)
-* [Queue](#queue)
-* [Singly Linked List](#singly-linked-list)
+* [Stack](#pushpin-stack)
+* [Queue](#pushpin-queue)
+* [Singly Linked List](#pushpin-singly-linked-list)
 * Hash Map
 * Binary Search Tree (only partially done)
 
