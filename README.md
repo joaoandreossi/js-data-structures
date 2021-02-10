@@ -14,7 +14,7 @@ vanilla JavaScript. Currently this project includes:
 Everything was done without (almost) any external dependencies, the exception being the ExtendedLinkedList file that I had to use [lodash's](https://lodash.com/) `isEqual` 
 function to perform a deep object comparison for some Hash Map methods. And, of course, had to import [jest](https://jestjs.io/) for some unit testing.
 
-## Usage
+## :pushpin: Usage
 First, make sure you have lodash installed in your node_modules folder. It is a dependency for a bunch of stuff, so chances are you already have it on your node_modules
 folder, but if you haven't you could install easily via npm:
 
@@ -40,7 +40,7 @@ const BinarySearchTree = require('./DataStructures/BinarySearchTree/BinarySearch
 
 Note that some data structures are built using other data structures, so all files are required even if you're only using some of them.
 
-## Stack
+## :pushpin: Stack
 
 The Stack is like a deck of cards where you can only remove the top card, so the first element to come in is the last to come out. The methods supported are the following:
 
@@ -153,7 +153,7 @@ stack: [1, 2, 3] <-- top
 
 Time complexity: `O(1)`
 
-## Queue
+## :pushpin: Queue
 Like a real life queue, the first element to be inserted in a Queue data structure is the first element to come out.
 
 ### Instantiation
