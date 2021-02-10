@@ -6,7 +6,7 @@ Having done most of my programming during college in C and Java, I thought it wo
 vanilla JavaScript. Currently this project includes:
 
 * [Stack](#stack)
-* Queue
+* [Queue](#queue)
 * Singly Linked List
 * Hash Map
 * Binary Search Tree (only partially done)
@@ -37,6 +37,8 @@ const List = require('./DataStructures/SinglyLinkedList/SinglyLinkedList.js')
 const HashMap = require('./DataStructures/HashMap/HashMap.js')
 const BinarySearchTree = require('./DataStructures/BinarySearchTree/BinarySearchTree.js')
 ```
+
+Note that some data structures are built using other data structures, so all files are required even if you're only using some of them.
 
 ## Stack
 
@@ -152,3 +154,134 @@ stack: [1, 2, 3] <-- top
 Time complexity: `O(1)`
 
 ## Queue
+Like a real life queue, the first element to be inserted in a Queue data structure is the first element to come out.
+
+### Instantiation
+
+Like the Stack, a Queue needs a size during instantiation. If an element were to be added to a full queue, an error is thrown.
+
+```
+const queue = new Queue(10)
+```
+
+### Queue.enqueue(element)
+Inserts the passed element at the end of the queue.
+
+```
+queue.enqueue(1)
+queue.enqueue(2)
+queue.enqueue(3)
+```
+```
+queue: [3, 2, 1] <-- front
+```
+
+Time complexity: `O(1)`
+
+### Queue.dequeue()
+Removes the element at the front of the queue and return it.
+
+```
+queue.enqueue(1)
+queue.enqueue(2)
+queue.enqueue(3)
+
+let element = queue.dequeue()
+```
+```
+element: 1
+queue: [3, 2] <-- front
+```
+
+Time complexity: `O(n)`
+
+### Queue.front()
+Returns the element at the front of the queue, but does not remove it.
+
+```
+queue.enqueue(1)
+queue.enqueue(2)
+queue.enqueue(3)
+
+let element = queue.front()
+```
+```
+element: 1
+queue: [3, 2, 1] <-- front
+```
+
+Time complexity: `O(1)`
+
+### Queue.rear()
+Returns the element at the back of the queue, but does not remove it.
+
+```
+queue.enqueue(1)
+queue.enqueue(2)
+queue.enqueue(3)
+
+let element = queue.rear()
+```
+```
+element: 3
+queue: [3, 2, 1] <-- front
+```
+
+Time complexity: `O(1)`
+
+### Queue.contains(element)
+Return `true` if the element is present on the queue or `false` if it isn't.
+
+```
+queue.enqueue(1)
+queue.enqueue(2)
+queue.enqueue(3)
+
+console.log(queue.contains(2))
+```
+```
+console: true
+queue: [3, 2, 1] <-- front
+```
+
+Time complexity: `O(n)`
+
+### Queue.isFull()
+Return `true` if the number of elements on the queue is equal to it's size or `false` if not.
+
+```
+const queue = new Queue(3)
+
+queue.enqueue(1)
+queue.enqueue(2)
+queue.enqueue(3)
+
+console.log(queue.isFull())
+```
+```
+console: true
+queue: [3, 2, 1] <-- front
+```
+
+Time complexity: `O(1)`
+
+### Queue.isEmpty()
+Return `true` if there are no elements on the queue or `false` if there is.
+
+```
+queue.enqueue(1)
+queue.enqueue(2)
+queue.enqueue(3)
+
+queue.dequeue()
+queue.dequeue()
+queue.dequeue()
+
+console.log(queue.isEmpty())
+```
+```
+console: true
+queue: [] <-- front
+```
+
+Time complexity: `O(1)`
