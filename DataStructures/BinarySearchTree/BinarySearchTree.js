@@ -1,3 +1,5 @@
+'use strict'
+
 const TreeNode = require('./TreeNode')
 const Stack = require('../Stack/Stack')
 const Queue = require('../Queue/Queue')
@@ -18,14 +20,25 @@ BinarySearchTree.prototype.insert = function(value){
     add(root, node)
 }
 
-BinarySearchTree.prototype.has = function(value){
+BinarySearchTree.prototype.has = function(value, mode){
     if(this.root.value === undefined){
         return false
     }
 
     let root = this.root
 
-    return bfs(root, value)
+    switch(mode){
+        case 'bfs':
+            return bfs(root, value)
+        case 'preorder':
+            return preOrder(root, value)
+        case 'inorder':
+            return inOrder(root, value)
+        case 'postorder':
+            return postOrder(root, value)
+        default:
+            return bfs(root, value)
+    }
 }
 
 const add = function(root, node){
@@ -59,7 +72,6 @@ const preOrder = function(root, value){
             return true
         }
         if(!visited.includes(current)){
-            console.log(current.value)
             visited.push(current)
         }
         if(!visited.includes(current.right) && current.right !== undefined){
@@ -95,7 +107,6 @@ const inOrder = function(root, value){
         if(!visited.includes(current.left) && current.left !== undefined){
             stack.push(current.left)
         } else {
-            console.log(current.value)
             visited.push(stack.pop())
             
             if(!visited.includes(current.right) && current.right !== undefined){
@@ -120,7 +131,6 @@ const postOrder = function(root, value){
             stack.push(stack.peek().right)
         } else {
             if(stack.peek().value === value) return true
-            console.log(stack.peek().value)
             visited.push(stack.pop())
         }
     }
@@ -138,7 +148,6 @@ const bfs = function(root, value){
         }
         if(queue.front().left !== undefined) queue.enqueue(queue.front().left)
         if(queue.front().right !== undefined) queue.enqueue(queue.front().right)
-        console.log(queue.front().value)
         queue.dequeue()
     }
 
