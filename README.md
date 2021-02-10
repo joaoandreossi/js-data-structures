@@ -7,7 +7,7 @@ vanilla JavaScript. Currently this project includes:
 
 * [Stack](#stack)
 * [Queue](#queue)
-* Singly Linked List
+* [Singly Linked List](#singly-linked-list)
 * Hash Map
 * Binary Search Tree (only partially done)
 
@@ -285,3 +285,16 @@ queue: [] <-- front
 ```
 
 Time complexity: `O(1)`
+
+
+## :pushpin: Singly Linked List
+A Linked List is a data structure where every element is, unsurprisingly, linked to each other. Every element (or node) have a pointer to the next one on the list.
+It is similar to an array but better at performing certain tasks like inserting and deleting, but is worse at some others like accessing via index.
+
+### Instantiation
+
+This implementations does not have a defined maximum size, so it can be instantiated without any parameters.
+
+```
+const list = new SinglyLinkedList()
+```
