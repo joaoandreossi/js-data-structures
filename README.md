@@ -674,3 +674,63 @@ This implementation does not take any parameters during initialization.
 ```
 const bst = new BinarySearchTree()
 ```
+
+### BinarySearchTree.insert()
+Inserts the passed value into the tree.
+
+```
+bst.insert(5)
+bst.insert(3)
+bst.insert(7)
+bst.insert(4)
+bst.insert(8)
+bst.insert(6)
+bst.insert(1)
+```
+```
+tree:
+           5
+      /         \
+    3            7
+  /   \        /    \
+1       4     6       8
+```
+
+Time complexity: `O(log n)`
+
+### BinarySearchTree.has(value, mode)
+Returns `true` if the value is present on the tree, and `false` if it isn't.
+Mode controls the type of search that is going to be performed to look for the value:
+
+```
+modes:
+  "bfs": Breadth-First Search
+  "preorder": Depth-First Search Pre-ordering
+  "inorder": Depth-First Search In-ordering
+  "postorder": Depth-First Search Post-ordering
+```
+
+If no parameter is specified the method defaults to Breadth-First Search.
+
+```
+bst.insert(5)
+bst.insert(3)
+bst.insert(7)
+bst.insert(4)
+bst.insert(8)
+bst.insert(6)
+bst.insert(1)
+
+console.log(bst.has(8, "postorder")
+```
+```
+console: true
+```
+
+Time complexity: `O(log n)`
+
+## License
+Distributed under MIT License. See `LICENSE.md` for more information.
+
+## Contact
+You can reach me via [LinkedIn](https://www.linkedin.com/in/joaoandreossi) or joao.andreossi@gmail.com!
